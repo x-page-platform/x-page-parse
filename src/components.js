@@ -20,7 +20,7 @@ class Component {
         arr.push(this.getChildHtml(childConfig));
       });
     }
-    return arr;
+    return arr.join('');
   }
   getChildHtml(childConfig) {
     let config = this.mergeConfig(childConfig);

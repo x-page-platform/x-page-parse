@@ -81,104 +81,21 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(1);
-/* harmony export (immutable) */ __webpack_exports__["a"] = factory;
-
-
-function factory(componentName, config) {
-  switch (componentName) {
-    case 'form':
-      return new __WEBPACK_IMPORTED_MODULE_0__components__[componentName](config);
-    default:
-      return new __WEBPACK_IMPORTED_MODULE_0__components__["Component"](config);
-  }
-}
-
+eval("/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(1);\n/* harmony export (immutable) */ __webpack_exports__[\"a\"] = factory;\n\n\nfunction camelize(str) {\n  return str.substr(0, 1).toUpperCase() + str.substring(1);\n}\n\nfunction factory(componentName, config) {\n  switch (componentName) {\n    case 'form':\n      return new __WEBPACK_IMPORTED_MODULE_0__components__[camelize(componentName)](config);\n    default:\n      return new __WEBPACK_IMPORTED_MODULE_0__components__[\"Component\"](config);\n  }\n}\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/ParserFactory.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/ParserFactory.js?");
 
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ParserFactory__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Component", function() { return Component; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return Form; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HBox", function() { return HBox; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VBox", function() { return VBox; });
-
-
-class Component {
-  constructor(config) {
-    this.name = config.name;
-    this.config = config;
-    this.children = config.children;
-  }
-  getHtml() {
-    return '<div></div>';
-  }
-  // merge当前config到子config中，子config可继承父config
-  mergeConfig(childConfig) {
-    return Object.assign({ parent: this }, this.config, childConfig);
-  }
-  getChildrenHtmls() {
-    let arr = [];
-    if (this.children) {
-      this.children.forEach(childConfig => {
-        arr.push(this.getChildHtml(childConfig));
-      });
-    }
-    return arr;
-  }
-  getChildHtml(childConfig) {
-    let config = this.mergeConfig(childConfig);
-    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__ParserFactory__["a" /* factory */])(config.name, config).getHtml();
-  }
-}
-
-class Form extends Component {
-  getHtml() {
-    return `<div class="x-page-form">${this.getChildrenHtmls()}</div>`;
-  }
-}
-
-class HBox extends Component {
-  getHtml() {
-    return `<div class="x-page-hbox">${this.getChildrenHtmls()}</div>`;
-  }
-}
-
-class VBox extends Component {
-  getHtml() {
-    return `<div class="x-page-vbox">${this.getChildrenHtmls()}</div>`;
-  }
-}
-
-
-
+eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ParserFactory__ = __webpack_require__(0);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Component\", function() { return Component; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Form\", function() { return Form; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"HBox\", function() { return HBox; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"VBox\", function() { return VBox; });\n\n\nclass Component {\n  constructor(config) {\n    this.name = config.name;\n    this.config = config;\n    this.children = config.children;\n  }\n  getHtml() {\n    return '<div></div>';\n  }\n  // merge当前config到子config中，子config可继承父config\n  mergeConfig(childConfig) {\n    return Object.assign({ parent: this }, this.config, childConfig);\n  }\n  getChildrenHtmls() {\n    let arr = [];\n    if (this.children) {\n      this.children.forEach(childConfig => {\n        arr.push(this.getChildHtml(childConfig));\n      });\n    }\n    return arr.join('');\n  }\n  getChildHtml(childConfig) {\n    let config = this.mergeConfig(childConfig);\n    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__ParserFactory__[\"a\" /* factory */])(config.name, config).getHtml();\n  }\n}\n\nclass Form extends Component {\n  getHtml() {\n    return `<div class=\"x-page-form\">${this.getChildrenHtmls()}</div>`;\n  }\n}\n\nclass HBox extends Component {\n  getHtml() {\n    return `<div class=\"x-page-hbox\">${this.getChildrenHtmls()}</div>`;\n  }\n}\n\nclass VBox extends Component {\n  getHtml() {\n    return `<div class=\"x-page-vbox\">${this.getChildrenHtmls()}</div>`;\n  }\n}\n\n\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/components.js\n// module id = 1\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/components.js?");
 
 /***/ }),
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ParserFactory__ = __webpack_require__(0);
-/* harmony export (immutable) */ __webpack_exports__["parse"] = parse;
-
-
-function parse(config) {
-  let elements = config.elements;
-  let output = [];
-
-  elements.forEach(component => {
-    let parser = __WEBPACK_IMPORTED_MODULE_0__ParserFactory__["a" /* factory */](component.name, component);
-    output.push(parser.getHtml());
-  });
-
-  return output.join('');
-}
-
+eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ParserFactory__ = __webpack_require__(0);\n/* harmony export (immutable) */ __webpack_exports__[\"parse\"] = parse;\n\n\nfunction parse(config) {\n  let elements = config.elements;\n  let output = [];\n\n  elements.forEach(component => {\n    let parser = __WEBPACK_IMPORTED_MODULE_0__ParserFactory__[\"a\" /* factory */](component.component, component);\n    output.push(parser.getHtml());\n  });\nconsole.log(output);\n  return output.join('');\n}\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 2\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 /******/ ]);

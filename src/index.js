@@ -5,9 +5,9 @@ export function parse(config) {
   let output = [];
 
   elements.forEach(component => {
-    let parser = ParserFactory.factory(component.name, component);
+    let parser = ParserFactory.factory(component.component, component);
     output.push(parser.getHtml());
   });
-
+console.log(output);
   return output.join('');
 }

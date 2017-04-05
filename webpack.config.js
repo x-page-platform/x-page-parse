@@ -8,5 +8,6 @@ module.exports = {
     library: 'XPageParser',
     libraryTarget: 'umd'
   },
-  watch: true
+  watch: true,
+  devtool: 'eval'
 };
