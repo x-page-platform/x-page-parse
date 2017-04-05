@@ -1,6 +1,6 @@
 import { factory } from './ParserFactory';
 
-class Component {
+export class Component {
   constructor(config) {
     this.name = config.name;
     this.config = config;
@@ -29,35 +29,43 @@ class Component {
   }
 }
 
-class Form extends Component {
+export class Form extends Component {
   getHtml() {
     return `<div class="x-page-form">${this.getChildrenHtmls()}</div>`;
   }
 }
 
-class HBox extends Component {
+export class HBox extends Component {
   getHtml() {
     return `<div class="x-page-hbox">${this.getChildrenHtmls()}</div>`;
   }
 }
 
-class VBox extends Component {
+export class VBox extends Component {
   getHtml() {
     return `<div class="x-page-vbox">${this.getChildrenHtmls()}</div>`;
   }
 }
 
-class Textfield extends Component {
+export class Textfield extends Component {
   getHtml() {
     return `
-      <div class="x-page-textfield">
+      <div class="x-page-form-item">
         <label style="width: ${this.config.labelWidth}">${this.config.label}</label>
         <div class="x-page-form-control">
-          <input type="text" />
+          <div class="x-page-textfield">
+            <input type="text" />
+          </div>
         </div>
       </div>
     `;
   }
 }
 
-export { Component, Form, HBox, VBox, Textfield };
+export class Button extends Component {
+  getHtml() {
+    return `
+      <button>${this.config.text}</button>
+    `;
+  }
+}
