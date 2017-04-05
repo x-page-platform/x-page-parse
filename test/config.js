@@ -3,6 +3,7 @@ window.config = {
     {
       component: 'form',
       columns: 3,
+      labelWidth: '200px',
       children: [
         {
           component: 'textfield',

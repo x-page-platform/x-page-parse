@@ -5,10 +5,9 @@ function camelize(str) {
 }
 
 export function factory(componentName, config) {
-  switch (componentName) {
-    case 'form':
-      return new XPage[camelize(componentName)](config);
-    default:
-      return new XPage.Component(config);
+  let Component = XPage[camelize(componentName)];
+  if (Component) {
+    return new Component(config);
   }
+  return new XPage.Component(config);
 }
