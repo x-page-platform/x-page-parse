@@ -1,4 +1,4 @@
-export default {
+window.config = {
   elements: [
     {
       component: 'form',
@@ -66,29 +66,6 @@ export default {
           template: '<a href="javascript:;" class="js-add">添加</a>'
         }
       ]
-    }
-  ],
-  datasets: [
-    {
-      id: 'form1',
-      type: 'model',
-      data: {
-        title: '1',
-        alias: '2',
-        category: '3'
-      }
-    }, {
-      id: 'table1',
-      type: 'collection',
-      autoQuery: true,
-      data: {
-        list: []
-      },
-      pageSize: 10,
-      page: 1,
-      queryDataset: 'form1',
-      queryUrl: '/prj1/func1/query',
-      submitUrl: '/prj1/func1/submit'
     }
   ]
 }

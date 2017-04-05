@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="" href="./styles.css">
+  <style type="text/css">
+    .box {
+      width: 100%;
+      box-sizing: border-box;
+      height: 100%;
+      border: 1px solid #e5e5e5;
+      padding-right: 5px;
+    }
+    .x-page-table {
+      flex: 1;
+      height: 400px;
+      border: 1px solid #e5e5e5;
+    }
+  </style>
+</head>
+<body>
+  <div class="x-page-form">
+    <div class="x-page-hbox">
+      <div class="x-page-col"><div class="box"></div></div>
+      <div class="x-page-col"><div class="box"></div></div>
+      <div class="x-page-col"><div class="box"></div></div>
+    </div>
+    <div class="x-page-hbox">
+      <div class="x-page-col" style="flex: 2;"><div class="box"></div></div>
+      <div class="x-page-col" style="flex: 1;"><div class="box"></div></div>
+    </div>
+    <div class="x-page-hbox">
+      <div class="x-page-col"><div class="box"></div></div>
+    </div>
+    <div class="x-page-hbox">
+      <div class="x-page-vbox" style="flex: 1;">
+        <div class="x-page-col"><div class="box"></div></div>
+        <div class="x-page-col"><div class="box"></div></div>
+        <div class="x-page-col"><div class="box"></div></div>
+      </div>
+      <div class="x-page-col" style="flex: 2;"><div class="box" style="height: 140px;"></div></div>
+    </div>
+  </div>
+  <div class="x-page-hbox">
+    <div class="x-page-col">
+      <div class="x-page-table"></div>
+    </div>
+  </div>
+</body>
+</html>
+
+[
+  {
+    component: 'form',
+    children: [
+      {
+        component: 'hbox',
+        children: [
+          {
+            comoponent: 'col',
+            children: [{
+              component: 'textfield'
+            }]
+          },
+          {
+            comoponent: 'col',
+            children: [{
+              component: 'textfield'
+            }]
+          },
+          {
+            comoponent: 'col',
+            children: [{
+              component: 'textfield'
+            }]
+          }
+        ]
+      },
+      {
+        comoponent: 'hbox',
+        children: [
+          {
+            component: 'col',
+            colspan: 2,
+            children: [
+            ]
+          },
+          {
+            component: 'col',
+            colspan: 1,
+            children: [
+            ]
+          }
+        ]
+      },
+      {
+        component: 'hbox',
+        children: [
+          {
+            component: 'vbox',
+            colspan: 1,
+            children: []
+          },
+          {
+            component: 'col',
+            colspan: 2,
+            children: []
+          }
+        ]
+      }
+    ]
+  }
+]

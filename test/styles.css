@@ -1,0 +1,20 @@
+.x-page-form {
+}
+.x-page-row {
+  display: flex;
+}
+.x-page-col {
+  flex: 1;
+  height: 40px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.x-page-hbox {
+  display: flex;
+  flex: 1;
+}
+.x-page-vbox {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
