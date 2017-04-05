@@ -2,28 +2,75 @@ window.config = {
   elements: [
     {
       component: 'form',
-      columns: 3,
       labelWidth: '200px',
       children: [
         {
-          component: 'textfield',
-          label: '商品名称'
+          component: 'hbox',
+          children: [
+            {
+              comoponent: 'col',
+              children: [{
+                label: '商品名称',
+                component: 'textfield'
+              }]
+            },
+            {
+              comoponent: 'col',
+              children: [{
+                label: '商品编码',
+                component: 'textfield'
+              }]
+            },
+            {
+              comoponent: 'col',
+              children: [{
+                label: 'alias',
+                component: 'textfield'
+              }]
+            }
+          ]
         },
         {
-          component: 'textfield',
-          label: 'Alias'
+          comoponent: 'hbox',
+          children: [
+            {
+              component: 'col',
+              colspan: 2,
+              children: [{
+                label: 'alias',
+                component: 'textfield'
+              }]
+            },
+            {
+              component: 'col',
+              colspan: 1,
+              children: [{
+                label: 'alias',
+                component: 'textfield'
+              }]
+            }
+          ]
         },
         {
-          component: 'textfield',
-          label: '店铺名称'
-        },
-        {
-          component: 'textfield',
-          label: 'kdtId'
-        },
-        {
-          component: 'combobox',
-          label: '商品分组'
+          component: 'hbox',
+          children: [
+            {
+              component: 'vbox',
+              colspan: 1,
+              children: [{
+                label: 'alias',
+                component: 'textfield'
+              }]
+            },
+            {
+              component: 'col',
+              colspan: 2,
+              children: [{
+                label: 'alias',
+                component: 'textfield'
+              }]
+            }
+          ]
         }
       ]
     },

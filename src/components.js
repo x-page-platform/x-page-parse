@@ -47,6 +47,12 @@ export class VBox extends Component {
   }
 }
 
+export class Col extends Component {
+  getHtml() {
+    return `<div class="x-page-col">${this.getChildrenHtmls()}</div>`;
+  }
+}
+
 export class Textfield extends Component {
   getHtml() {
     return `

@@ -8,6 +8,6 @@ export function parse(config) {
     let parser = ParserFactory.factory(component.component, component);
     output.push(parser.getHtml());
   });
-console.log(output);
+
   return output.join('');
 }
