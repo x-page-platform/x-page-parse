@@ -1,19 +1,26 @@
 import { factory } from './ParserFactory';
+import omit from 'lodash/omit';
+import defaultsDeep from 'lodash/defaultsDeep';
 
 export class Component {
+  defaults = { };
+
   constructor(config) {
     this.name = config.name;
-    this.config = config;
+    this.config = defaultsDeep(config, this.defaults);
     this.children = config.children;
-    delete this.config.children;
   }
+
   getHtml() {
     return '<div></div>';
   }
+
   mergeConfig(childConfig) {
     // merge当前config到子config中，子config可继承父config
-    return Object.assign({ parent: this }, this.config, childConfig);
+    let pureParentConfig = omit(this.config, ['children', 'component']);
+    return Object.assign({ parent: this }, pureParentConfig, childConfig);
   }
+
   getChildrenHtmls() {
     let arr = [];
     if (this.children) {
@@ -23,6 +30,7 @@ export class Component {
     }
     return arr.join('');
   }
+
   getChildHtml(childConfig) {
     let config = this.mergeConfig(childConfig);
     return factory(config.component, config).getHtml();
@@ -49,7 +57,7 @@ export class VBox extends Component {
 
 export class Col extends Component {
   getHtml() {
-    return `<div class="x-page-col">${this.getChildrenHtmls()}</div>`;
+    return `<div class="x-page-col" style="flex: ${this.config.colspan}">${this.getChildrenHtmls()}</div>`;
   }
 }
 

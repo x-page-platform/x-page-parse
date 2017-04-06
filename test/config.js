@@ -2,42 +2,42 @@ window.config = {
   elements: [
     {
       component: 'form',
-      labelWidth: '200px',
+      labelWidth: '120px',
       children: [
         {
           component: 'hbox',
           children: [
             {
-              comoponent: 'col',
+              component: 'col',
               children: [{
-                label: '商品名称',
+                label: '商铺名称：',
                 component: 'textfield'
               }]
             },
             {
-              comoponent: 'col',
+              component: 'col',
               children: [{
-                label: '商品编码',
+                label: '创建时间：',
                 component: 'textfield'
               }]
             },
             {
-              comoponent: 'col',
+              component: 'col',
               children: [{
-                label: 'alias',
+                label: '类目：',
                 component: 'textfield'
               }]
             }
           ]
         },
         {
-          comoponent: 'hbox',
+          component: 'hbox',
           children: [
             {
               component: 'col',
               colspan: 2,
               children: [{
-                label: 'alias',
+                label: 'alias：',
                 component: 'textfield'
               }]
             },
@@ -45,7 +45,7 @@ window.config = {
               component: 'col',
               colspan: 1,
               children: [{
-                label: 'alias',
+                label: 'alias：',
                 component: 'textfield'
               }]
             }
@@ -58,7 +58,7 @@ window.config = {
               component: 'vbox',
               colspan: 1,
               children: [{
-                label: 'alias',
+                label: 'alias：',
                 component: 'textfield'
               }]
             },
@@ -66,7 +66,7 @@ window.config = {
               component: 'col',
               colspan: 2,
               children: [{
-                label: 'alias',
+                label: 'alias：',
                 component: 'textfield'
               }]
             }

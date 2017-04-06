@@ -73,29 +73,34 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components__ = __webpack_require__(1);\n/* harmony export (immutable) */ __webpack_exports__[\"a\"] = factory;\n\n\nfunction factory(componentName, config) {\n  let cname = Object.keys(__WEBPACK_IMPORTED_MODULE_0__components__).find(key => key.toLowerCase() === componentName.toLowerCase());\n  if (cname) {\n    return new __WEBPACK_IMPORTED_MODULE_0__components__[cname](config);\n  }\n  return new __WEBPACK_IMPORTED_MODULE_0__components__[\"Component\"](config);\n}\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/ParserFactory.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/ParserFactory.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.factory = factory;\n\nvar _components = __webpack_require__(2);\n\nvar XPage = _interopRequireWildcard(_components);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nfunction factory(componentName, config) {\n  var cname = Object.keys(XPage).find(function (key) {\n    return key.toLowerCase() === componentName.toLowerCase();\n  });\n  if (cname) {\n    return new XPage[cname](config);\n  }\n  return new XPage.Component(config);\n}\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/ParserFactory.js\n// module id = 0\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/ParserFactory.js?");
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ParserFactory__ = __webpack_require__(0);\n\n\nclass Component {\n  constructor(config) {\n    this.name = config.name;\n    this.config = config;\n    this.children = config.children;\n    delete this.config.children;\n  }\n  getHtml() {\n    return '<div></div>';\n  }\n  mergeConfig(childConfig) {\n    // merge当前config到子config中，子config可继承父config\n    return Object.assign({ parent: this }, this.config, childConfig);\n  }\n  getChildrenHtmls() {\n    let arr = [];\n    if (this.children) {\n      this.children.forEach(childConfig => {\n        arr.push(this.getChildHtml(childConfig));\n      });\n    }\n    return arr.join('');\n  }\n  getChildHtml(childConfig) {\n    let config = this.mergeConfig(childConfig);\n    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__ParserFactory__[\"a\" /* factory */])(config.component, config).getHtml();\n  }\n}\n/* harmony export (immutable) */ __webpack_exports__[\"Component\"] = Component;\n\n\nclass Form extends Component {\n  getHtml() {\n    return `<div class=\"x-page-form\">${this.getChildrenHtmls()}</div>`;\n  }\n}\n/* harmony export (immutable) */ __webpack_exports__[\"Form\"] = Form;\n\n\nclass HBox extends Component {\n  getHtml() {\n    return `<div class=\"x-page-hbox\">${this.getChildrenHtmls()}</div>`;\n  }\n}\n/* harmony export (immutable) */ __webpack_exports__[\"HBox\"] = HBox;\n\n\nclass VBox extends Component {\n  getHtml() {\n    return `<div class=\"x-page-vbox\">${this.getChildrenHtmls()}</div>`;\n  }\n}\n/* harmony export (immutable) */ __webpack_exports__[\"VBox\"] = VBox;\n\n\nclass Col extends Component {\n  getHtml() {\n    return `<div class=\"x-page-col\">${this.getChildrenHtmls()}</div>`;\n  }\n}\n/* harmony export (immutable) */ __webpack_exports__[\"Col\"] = Col;\n\n\nclass Textfield extends Component {\n  getHtml() {\n    return `\n      <div class=\"x-page-form-item\">\n        <label style=\"width: ${this.config.labelWidth}\">${this.config.label}</label>\n        <div class=\"x-page-form-control\">\n          <div class=\"x-page-textfield\">\n            <input type=\"text\" />\n          </div>\n        </div>\n      </div>\n    `;\n  }\n}\n/* harmony export (immutable) */ __webpack_exports__[\"Textfield\"] = Textfield;\n\n\nclass Button extends Component {\n  getHtml() {\n    return `\n      <button>${this.config.text}</button>\n    `;\n  }\n}\n/* harmony export (immutable) */ __webpack_exports__[\"Button\"] = Button;\n\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/components.js\n// module id = 1\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/components.js?");
+eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/styles.scss\n// module id = 1\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/styles.scss?");
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module build failed: SyntaxError: Missing class properties transform.\\n\\n\\u001b[0m \\u001b[90m 4 | \\u001b[39m\\n \\u001b[90m 5 | \\u001b[39m\\u001b[36mexport\\u001b[39m \\u001b[36mclass\\u001b[39m \\u001b[33mComponent\\u001b[39m {\\n\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 6 | \\u001b[39m  defaults \\u001b[33m=\\u001b[39m { }\\u001b[33m;\\u001b[39m\\n \\u001b[90m   | \\u001b[39m  \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\n \\u001b[90m 7 | \\u001b[39m\\n \\u001b[90m 8 | \\u001b[39m  constructor(config) {\\n \\u001b[90m 9 | \\u001b[39m    \\u001b[36mthis\\u001b[39m\\u001b[33m.\\u001b[39mname \\u001b[33m=\\u001b[39m config\\u001b[33m.\\u001b[39mname\\u001b[33m;\\u001b[39m\\u001b[0m\\n\");\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/components.js\n// module id = 2\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/components.js?");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("Object.defineProperty(__webpack_exports__, \"__esModule\", { value: true });\n/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ParserFactory__ = __webpack_require__(0);\n/* harmony export (immutable) */ __webpack_exports__[\"parse\"] = parse;\n\n\nfunction parse(config) {\n  let elements = config.elements;\n  let output = [];\n\n  elements.forEach(component => {\n    let parser = __WEBPACK_IMPORTED_MODULE_0__ParserFactory__[\"a\" /* factory */](component.component, component);\n    output.push(parser.getHtml());\n  });\n\n  return output.join('');\n}\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 2\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.parse = parse;\n\nvar _ParserFactory = __webpack_require__(0);\n\nvar ParserFactory = _interopRequireWildcard(_ParserFactory);\n\n__webpack_require__(1);\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\nfunction parse(config) {\n  var elements = config.elements;\n  var output = [];\n\n  elements.forEach(function (component) {\n    var parser = ParserFactory.factory(component.component, component);\n    output.push(parser.getHtml());\n  });\n\n  return output.join('');\n}\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/index.js\n// module id = 3\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 /******/ ]);

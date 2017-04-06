@@ -1,5 +1,7 @@
 import * as ParserFactory from './ParserFactory';
 
+import './styles.scss';
+
 export function parse(config) {
   let elements = config.elements;
   let output = [];

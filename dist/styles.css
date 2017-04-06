@@ -1,0 +1,29 @@
+body {
+  min-width: 1000px;
+  font-size: 12px;
+  line-height: 1.5em;
+  font-family: Helvetica, STHeiti, "Microsoft YaHei", Verdana, Arial, Tahoma, sans-serif;
+  background-color: #fff; }
+
+.x-page-form-item {
+  display: flex;
+  align-items: center; }
+  .x-page-form-item label {
+    text-align: right; }
+
+.x-page-row {
+  display: flex; }
+
+.x-page-col {
+  flex: 1;
+  box-sizing: border-box; }
+
+.x-page-hbox {
+  display: flex;
+  flex: 1;
+  margin-bottom: 10px; }
+
+.x-page-vbox {
+  display: flex;
+  flex: 1;
+  flex-direction: column; }
