@@ -3,11 +3,13 @@ import omit from 'lodash/omit';
 import defaultsDeep from 'lodash/defaultsDeep';
 
 export class Component {
-  defaults = { };
+  defaults() {
+    return {};
+  }
 
   constructor(config) {
     this.name = config.name;
-    this.config = defaultsDeep(config, this.defaults);
+    this.config = defaultsDeep(config, this.defaults());
     this.children = config.children;
   }
 
@@ -56,6 +58,12 @@ export class VBox extends Component {
 }
 
 export class Col extends Component {
+  defaults() {
+    return {
+      colspan: 1
+    };
+  }
+
   getHtml() {
     return `<div class="x-page-col" style="flex: ${this.config.colspan}">${this.getChildrenHtmls()}</div>`;
   }
