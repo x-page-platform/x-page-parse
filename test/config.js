@@ -35,18 +35,38 @@ window.config = {
           children: [
             {
               component: 'col',
-              colspan: 2,
+              colspan: 1,
               children: [{
-                label: 'alias：',
-                component: 'textfield'
+                component: 'radiofield',
+                label: '店铺状态：',
+                items: [{
+                  value: 'all',
+                  label: '全部'
+                }, {
+                  value: '1',
+                  label: '正常'
+                }, {
+                  value: '2',
+                  label: '锁定'
+                }]
               }]
             },
             {
               component: 'col',
-              colspan: 1,
+              colspan: 2,
               children: [{
-                label: 'alias：',
-                component: 'textfield'
+                label: '来源：',
+                component: 'comboboxfield',
+                items: [{
+                  value: 'all',
+                  label: '全部'
+                }, {
+                  value: '1',
+                  label: '正常'
+                }, {
+                  value: '2',
+                  label: '锁定'
+                }]
               }]
             }
           ]

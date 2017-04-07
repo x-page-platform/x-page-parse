@@ -69,16 +69,66 @@ export class Col extends Component {
   }
 }
 
-export class Textfield extends Component {
+export class Field extends Component {
+  getFieldHtml() {
+
+  }
   getHtml() {
     return `
       <div class="x-page-form-item">
         <label style="width: ${this.config.labelWidth}">${this.config.label}</label>
         <div class="x-page-form-control">
-          <div class="x-page-textfield">
-            <input type="text" />
-          </div>
+          ${this.getFieldHtml()}
         </div>
+      </div>
+    `;
+  }
+}
+
+export class Textfield extends Field {
+  getFieldHtml() {
+    return `
+        <div class="x-page-textfield">
+          <input type="text" />
+        </div>
+    `;
+  }
+}
+
+export class RadioField extends Field {
+  static UUID = 0;
+
+  constructor(config) {
+    super(config);
+    this.radioName = this.config.name || RadioField.UUID++;
+  }
+
+  getRadiosItems() {
+    return this.config.items.map(item => {
+      return `<label><input type="radio" value="${item.value}" name="${this.radioName}" /> ${item.label}</label>`;
+    }).join('');
+  }
+
+  getFieldHtml() {
+    return `
+      <div class="x-page-radiofield">
+        ${this.getRadiosItems()}
+      </div>
+    `;
+  }
+}
+
+export class ComboboxField extends Field {
+  getComboList() {
+    return this.config.items.map(item => {
+      return `<option value="${item.value}">${item.label}</option>`;
+    }).join('');
+  }
+
+  getFieldHtml() {
+    return `
+      <div class="x-page-comboboxfield">
+        <select>${this.getComboList()}</select>
       </div>
     `;
   }
