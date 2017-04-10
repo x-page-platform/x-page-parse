@@ -33,3 +33,19 @@ body {
   flex: 1;
   flex-direction: column;
 }
+
+.x-page-gird {
+  table {
+    width: 100%;
+    thead {
+      tr {
+        border-top: none;
+        border-bottom: 1px solid #e5e5e5;
+        background: #f2f2f2;
+      }
+      th {
+        padding: 10px;
+      }
+    }
+  }
+}

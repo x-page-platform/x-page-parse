@@ -8,6 +8,7 @@ export function parse(config) {
 
   elements.forEach(component => {
     let parser = ParserFactory.factory(component.component, component);
+    console.log(parser.getHtml());
     output.push(parser.getHtml());
   });
 

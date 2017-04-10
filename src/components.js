@@ -39,24 +39,36 @@ export class Component {
   }
 }
 
+/**
+ * Form
+ */
 export class Form extends Component {
   getHtml() {
     return `<div class="x-page-form">${this.getChildrenHtmls()}</div>`;
   }
 }
 
+/**
+ * HBox
+ */
 export class HBox extends Component {
   getHtml() {
     return `<div class="x-page-hbox">${this.getChildrenHtmls()}</div>`;
   }
 }
 
+/**
+ * VBox
+ */
 export class VBox extends Component {
   getHtml() {
     return `<div class="x-page-vbox">${this.getChildrenHtmls()}</div>`;
   }
 }
 
+/**
+ * Col
+ */
 export class Col extends Component {
   defaults() {
     return {
@@ -69,10 +81,12 @@ export class Col extends Component {
   }
 }
 
+/**
+ * Field
+ */
 export class Field extends Component {
-  getFieldHtml() {
+  getFieldHtml() { }
 
-  }
   getHtml() {
     return `
       <div class="x-page-form-item">
@@ -85,7 +99,10 @@ export class Field extends Component {
   }
 }
 
-export class Textfield extends Field {
+/**
+ * TextField
+ */
+export class TextField extends Field {
   getFieldHtml() {
     return `
         <div class="x-page-textfield">
@@ -95,6 +112,9 @@ export class Textfield extends Field {
   }
 }
 
+/**
+ * RadioField
+ */
 export class RadioField extends Field {
   static UUID = 0;
 
@@ -118,6 +138,9 @@ export class RadioField extends Field {
   }
 }
 
+/**
+ * ComboboxField
+ */
 export class ComboboxField extends Field {
   getComboList() {
     return this.config.items.map(item => {
@@ -134,10 +157,35 @@ export class ComboboxField extends Field {
   }
 }
 
+/**
+ * Button
+ */
 export class Button extends Component {
   getHtml() {
     return `
       <button>${this.config.text}</button>
+    `;
+  }
+}
+
+export class Grid extends Component {
+  getHead() {
+    return ['<tr>'].concat(this.config.columns.map(th => {
+      return `<th>${th.title}</th>`;
+    })).concat('</tr>').join('');
+  }
+
+  getHtml() {
+    return `
+      <div class="x-page-gird">
+        <table cellpadding="0" cellspacing="0">
+          <thead>${this.getHead()}</thead>
+          <tbody>
+          </tbody>
+          <tfoot>
+          </tfoot>
+        </table>
+      </div>
     `;
   }
 }

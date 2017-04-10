@@ -110,26 +110,22 @@ window.config = {
       ]
     },
     {
-      component: 'table',
+      component: 'grid',
       bindDataSet: 'table1',
-      children: [
+      columns: [
         {
-          component: 'column',
           title: '商品名称',
           name: 'title'
         },
         {
-          component: 'column',
           title: 'Alias',
           name: 'alias'
         },
         {
-          component: 'column',
           title: '分组',
           name: 'category'
         },
         {
-          component: 'column',
           title: '操作',
           template: '<a href="javascript:;" class="js-add">添加</a>'
         }
